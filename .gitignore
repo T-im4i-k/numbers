@@ -1,0 +1,33 @@
+# VS Code
+.vscode/
+
+# Jet Brains
+.idea/
+
+# Build directories
+build/
+bin/
+obj/
+
+# Binary files
+*.out
+*.exe
+*.o
+*.obj
+
+*.a
+*.lib
+
+*.dll
+*.so
+
+# Dependency files
+*.d
+
+# Text files
+*.txt
+
+# Log files
+*.log
+*.tmp
+*.temp
