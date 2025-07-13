@@ -20,7 +20,7 @@ $(STATIC_LIB): $(OBJ_FILES)
 	@mkdir -p $(dir $@)
 	ar rcs $@ $^
 
-$(BUILD_DIR)/%.o: $(SRC)/%.cpp
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) -MMD -c $< -o $@
 
@@ -28,4 +28,4 @@ $(BUILD_DIR)/%.o: $(SRC)/%.cpp
 
 .PHONY: clean
 clean:
-	rm -rf $(BUILD_DIR)/*
+	rm -rf $(BUILD_DIR)/* $(LIB_DIR)/*
