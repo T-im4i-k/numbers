@@ -1,0 +1,1 @@
+This project provides a lightweight library for number manipulation, including custom number types and utilities for working with numbers.
