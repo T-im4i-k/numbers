@@ -21,6 +21,12 @@ obj/
 *.dll
 *.so
 
+# Library directory
+lib/
+
+# Test directory
+test/
+
 # Dependency files
 *.d
 
