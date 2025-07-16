@@ -1,6 +1,6 @@
 #pragma once
 
-#include "num_aliases.hpp"
+#include "numbers/number_types/num_aliases.hpp"
 
 #include <compare>
 #include <stdexcept>
