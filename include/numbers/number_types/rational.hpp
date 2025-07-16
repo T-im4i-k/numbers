@@ -11,23 +11,23 @@ namespace Numbers
     class Rational
     {
     public:
-        Rational(IntT numerator, IntT denominator = 1);
+        Rational(const IntT numerator, const IntT denominator = 1);
 
-        friend Rational operator+(Rational lhs, Rational rhs);
+        friend Rational operator+(const Rational lhs, const Rational rhs);
 
-        friend Rational operator*(Rational lhs, Rational rhs);
+        friend Rational operator*(const Rational lhs, const Rational rhs);
 
-        Rational operator-();
+        [[nodiscard]] Rational operator-() const;
 
-        Rational operator~();
+        [[nodiscard]] Rational operator~() const;
 
-        friend Rational operator-(Rational lhs, Rational rhs);
+        friend Rational operator-(const Rational lhs, const Rational rhs);
 
-        friend Rational operator/(Rational lhs, Rational rhs);
+        friend Rational operator/(const Rational lhs, const Rational rhs);
 
-        friend bool operator==(Rational lhs, Rational rhs);
+        friend bool operator==(const Rational lhs, const Rational rhs);
 
-        friend std::strong_ordering operator<=>(Rational lhs, Rational rhs);
+        friend std::strong_ordering operator<=>(const Rational lhs, const Rational rhs);
 
     private:
         void normalize();

@@ -3,7 +3,7 @@
 
 namespace Numbers
 {
-    Rational::Rational(IntT numenator, IntT denominator) : numerator_(numenator), denominator_(denominator)
+    Rational::Rational(const IntT numenator, const IntT denominator) : numerator_(numenator), denominator_(denominator)
     {
         if (denominator_ == 0)
         {
@@ -13,7 +13,7 @@ namespace Numbers
         normalize();
     }
 
-    Rational operator+(Rational lhs, Rational rhs)
+    [[nodiscard]] Rational operator+(const Rational lhs, const Rational rhs)
     {
         IntT numenator = lhs.numerator_ * rhs.denominator_ + rhs.numerator_ * lhs.denominator_;
         IntT denominator = lhs.denominator_ * rhs.denominator_;
@@ -21,7 +21,7 @@ namespace Numbers
         return Rational(numenator, denominator);
     }
 
-    Rational operator*(Rational lhs, Rational rhs)
+    [[nodiscard]] Rational operator*(const Rational lhs, const Rational rhs)
     {
         IntT numenator = lhs.numerator_ * rhs.numerator_;
         IntT denominator = lhs.denominator_ * rhs.denominator_;
@@ -29,32 +29,32 @@ namespace Numbers
         return Rational(numenator, denominator);
     }
 
-    Rational Rational::operator-()
+    Rational Rational::operator-() const
     {
         return Rational(-numerator_, denominator_);
     }
 
-    Rational Rational::operator~()
+    Rational Rational::operator~() const
     {
         return Rational(denominator_, numerator_);
     }
 
-    Rational operator-(Rational lhs, Rational rhs)
+    [[nodiscard]] Rational operator-(const Rational lhs, const Rational rhs)
     {
         return lhs + (-rhs);
     }
 
-    Rational operator/(Rational lhs, Rational rhs)
+    [[nodiscard]] Rational operator/(const Rational lhs, const Rational rhs)
     {
         return lhs * (~rhs);
     }
 
-    bool operator==(Rational lhs, Rational rhs)
+    [[nodiscard]] bool operator==(const Rational lhs, const Rational rhs)
     {
         return lhs.numerator_ == rhs.numerator_ && lhs.denominator_ == rhs.denominator_;
     }
 
-    std::strong_ordering operator<=>(Rational lhs, Rational rhs)
+    [[nodiscard]] std::strong_ordering operator<=>(const Rational lhs, const Rational rhs)
     {
         return lhs.numerator_ * rhs.denominator_ <=> rhs.numerator_ * lhs.denominator_;
     }
