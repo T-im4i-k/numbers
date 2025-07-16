@@ -9,4 +9,6 @@ namespace Numbers
     using UIntT = std::uint32_t;
 
     using FloatT = double;
+
+    using Real = FloatT;
 } // namespace Num
